@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="container-fluid">
+        <div class="row justify-content-center"> 
+            <div class="col-md-4">
+                <h1>USERS</h1>
+                <ul>
+                    <li th:each="user : ${us}">
+                        <span th:text="${user.name}"></span> <br>
+                        <span th:text="${user.weight}"></span> 
+                        <span th:text="${user.height}"></span> 
+                        <span th:text="${user.haircolor}"></span> 
+                        <span th:text="${user.gpa}"></span> 
+                        <div th:switch="${user.name}">
+                            <span th:case="'John'">this is the tracker</span>
+                            <span th:case="'matt'">this is the tracker</span>
+                            <span th:case="'charles'">this is the tracker</span>
+                            <span th:case="'xavier'">this is the tracker</span>
+                            <span th:case="*">General user</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
